@@ -20,10 +20,10 @@ from colorama import init, Fore, Style
 # Tambahkan path core ke sys.path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'core'))
 
-from core.layer7 import Layer7Attacker
-from core.layer4 import Layer4Attacker
-from core.proxy_engine import ProxyEngine
-from core.utils import (
+from layer7 import Layer7Attacker
+from layer4 import Layer4Attacker
+from proxy_engine import ProxyEngine
+from utils import (
     print_banner, 
     validate_url, 
     validate_ip, 
@@ -189,7 +189,7 @@ class DDoSMrVoidsz:
                     proxy_file = None
                     use_proxy = input(f"{Fore.GREEN}[+] Gunakan proxy? (y/n): ").strip().lower()
                     if use_proxy == 'y':
-                        proxy_file = "data/proxies.txt"
+                        proxy_file = "proxies.txt"
                         if not os.path.exists(proxy_file):
                             print(f"{Fore.YELLOW}[*] Generating proxy list...")
                             ProxyEngine.generate_proxy_list(100, proxy_file)

@@ -1,0 +1,5 @@
+requests>=2.28.0
+colorama>=0.4.6
+urllib3>=1.26.0
+thread6>=0.2.0
+socks5>=2.0.0
